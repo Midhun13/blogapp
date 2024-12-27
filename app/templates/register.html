@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 90%;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: orangered;
+        }
+        .login-form {
+            background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 2;
+            border: 1px solid orangered;
+            border-radius: 10px;
+            padding: 20px;
+            width: 650px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            box-shadow: 0 0 10px orangered;
+        }
+        @media only screen and (max-width: 600px) {
+            .login-form {
+                position: static;
+                margin: 20px auto;
+                transform: none;
+                width: 250px;
+                top: auto;
+                left: auto;
+                transform: none;
+            }
+        }
+  input[type="text"]:required,
+  input[type="password"]:required,
+  input[type="email"]:required {
+    border-bottom: 2px solid red;
+  }
+  
+  input[type="text"]:required:invalid,
+  input[type="password"]:required:invalid,
+  input[type="email"]:required:invalid {
+    border-bottom: 2px solid red;
+    color: red;
+  }
+  
+  input[type="text"]:required:valid,
+  input[type="password"]:required:valid,
+  input[type="email"]:required:valid {
+    border-bottom: 2px solid green;
+  }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center"><b>Sign up now and start exploring the world of blogging!</b></h3>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="login-form">
+                        <div class="bg-blue">
+                            <div class="form-group">
+                                <label for="username" class="text-white"><b>Username:</b></label>
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="text-white"><b>Password:</b></label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="text-white"><b>Email:</b></label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password" class="text-white"><b>Confirm Password:</b></label>
+                                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary d-flex justify-content-center">Register</button>
+                            <br>
+                            <div>
+                                <p class="text-primary"><b>Already have an account?</b> <a href="/login" class="text-primary"><b>Login</b></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+body {
+    background-image: url('https://images.pexels.com/photos/2131614/pexels-photo-2131614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: orangered;
+}
+.login-form {
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 2;
+    border: 1px solid orangered;
+    border-radius: 10px;
+    padding: 20px;
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    box-shadow: 0 0 10px orangered;
+  }
+  @media only screen and (max-width: 600px) {
+    .login-form {
+      position: static;
+      margin: 20px auto;
+      transform: none;
+      width: 250px;
+      top: auto;
+      left: auto;
+      transform: none;
+    }
+  }
+  input[type="text"]:required,
+input[type="password"]:required {
+  border-bottom: 2px solid red;
+}
+
+input[type="text"]:required:invalid,
+input[type="password"]:required:invalid {
+  border-bottom: 2px solid red;
+  color: red;
+}
+
+input[type="text"]:required:valid,
+input[type="password"]:required:valid {
+  border-bottom: 2px solid green;
+}
+</style>
+
+<body>
+    
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand p-2 text-white "><b>BLOG</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="/index">
+                            <button class="btn btn-primary btn-md">Home</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+    <section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center text-white"><b>Welcome to Blog Site</b></h3>
+                <p class="text-center text-white"><b>Sign in to access your account and start blogging!</b></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="login-form">
+                    <form class="bg-blue">
+                        <div class="form-group">
+                            <label for="username" class="text-white"><b>Username:</b></label>
+                            <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-white"><b>Password:</b></label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-secondary p-1" id="show-password-btn">Show</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary d-flex justify-content-center">Login</button>
+                    </form>
+                    <br>
+                    <div>
+                        <p class="text-primary"><b>Don't have an account?</b> <a href="/register" class="text-primary"><b>Sign up</b></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+const passwordInput = document.getElementById('password');
+const showPasswordBtn = document.getElementById('show-password-btn');
+
+showPasswordBtn.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    showPasswordBtn.textContent = 'Hide';
+  } else {
+    passwordInput.type = 'password';
+    showPasswordBtn.textContent = 'Show';
+  }
+});
+</script>
+</body>
+</html>
